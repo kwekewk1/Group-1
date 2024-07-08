@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Images</title>
+    <script src="https://use.fontawesome.com/2180418238.js"></script>
+    <link rel="stylesheet" type="text/css" href="image_search.css">
+</head>
+<body>
+    <header>
+        <ul>
+            <li><a href="advanced_search.html">Advanced Search</a></li>
+            <li><a href="index.html">Back to Main</a></li>
+        </ul>
+    </header>
+
+    <section>
+        <div class="image_container">
+            <img src="images/google_img.png" alt="Google Images">
+            <span>Images</span>
+        </div>
+        <form id="searchForm" action="https://www.google.com/search" method="GET">
+            <div class="search_bar"> 
+                <i class="fa fa-search"></i>
+                <input type="text" id="searchInput" name="q" placeholder="Search Google Images">
+                <button type="submit" id="searchButton">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+            <input type="hidden" name="tbm" value="isch"> <!-- This restricts search to images -->
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer1">
+            <ul>
+                <li><span>Philippines</span></li>
+            </ul>
+        </div>
+        <div class="footer2">
+            <ul class="footer-left">
+                <li><a href="https://about.google/?utm_source=google-PH&utm_medium=referral&utm_campaign=hp-footer&fg=1">About</a></li>
+                <li><a href="https://ads.google.com/intl/en_ph/home/?subid=ww-ww-et-g-awa-a-g_hpafoot1_1!o2&utm_source=google.com&utm_medium=referral&utm_campaign=google_hpafooter&fg=1">Advertising</a></li>
+                <li><a href="https://www.google.com/intl/en_ph/business/">Business</a></li>
+                <li><a href="https://www.google.com/search/howsearchworks/?fg=1">How Search Works</a></li>
+            </ul>
+            <ul class="footer-right">
+                <li><a href="https://policies.google.com/privacy?hl=en-PH&fg=1">Privacy</a></li>
+                <li><a href="https://policies.google.com/terms?hl=en-PH&fg=1">Terms</a></li>
+                <li><a href="">Settings</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript to submit form when Enter key is pressed in the search input
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault(); // Prevent default form submission
+                document.getElementById('searchForm').submit(); // Submit the form
+            }
+        });
+    </script>
+</body>
+</html>
